@@ -53,7 +53,9 @@ public class DbHelper extends SQLiteOpenHelper {
                     + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + "title TEXT,"
                     + "author TEXT,"
-                    + "rating INTEGER"
+                    + "note TEXT,"
+                    + "rating INTEGER,"
+                    + "imageUrl TEXT"
                     + ")";
 
 
@@ -71,7 +73,9 @@ public class DbHelper extends SQLiteOpenHelper {
             book.setId(String.valueOf(cur.getInt(0)));
             book.setTitle(cur.getString(1));
             book.setAuthor(cur.getString(2));
-            book.setRating(cur.getInt(3));
+            book.setNote(cur.getString(3));
+            book.setRating(cur.getInt(4));
+            book.setImageUrl(cur.getString(5));
 
             cur.close();
             db.close();
@@ -98,7 +102,10 @@ public class DbHelper extends SQLiteOpenHelper {
                 book.setId(String.valueOf(cur.getInt(0)));
                 book.setTitle(cur.getString(1));
                 book.setAuthor(cur.getString(2));
-                book.setRating(cur.getInt(3));
+                book.setNote(cur.getString(3));
+                book.setRating(cur.getInt(4));
+                book.setImageUrl(cur.getString(5));
+
                 books.add(book);
             } while (cur.moveToNext());
 
@@ -117,7 +124,9 @@ public class DbHelper extends SQLiteOpenHelper {
         ContentValues row = new ContentValues();
         row.put("title", book.getTitle());
         row.put("author", book.getAuthor());
+        row.put("note", book.getNote());
         row.put("rating", book.getRating());
+        row.put("imageUrl", book.getImageUrl());
 
         long id = db.insert("books", null, row);
         db.close();

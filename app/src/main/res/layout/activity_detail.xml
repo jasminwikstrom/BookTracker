@@ -15,9 +15,9 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="109dp"
-            android:layout_height="123dp"
+            android:id="@+id/book_image"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
             android:src="@mipmap/book" />
 
         <LinearLayout
@@ -46,6 +46,15 @@
                 android:layout_row="1"
                 android:text="TextView" />
 
+            <TextView
+                android:id="@+id/detail_note"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_column="2"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_row="1"
+                android:text="TextView" />
 
         </LinearLayout>
 

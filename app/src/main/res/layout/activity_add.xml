@@ -1,90 +1,138 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:paddingBottom="0dp"
-    tools:context="com.jw.booktracker.AddActivity">
+    android:paddingTop="0dp"
+    tools:context="com.jw.booktracker.AddActivity"><![CDATA[
 
-    <GridLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:columnCount="4"
+    android:rowCount="9">
+
+    ]]>
+
+    <EditText
+        android:id="@+id/booktitle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="14dp"
+        android:background="#fff"
+        android:enabled="true"
+        android:fadingEdge="horizontal"
+        android:gravity="bottom"
+        android:hint="@string/namebook"
+        android:inputType="text"
+        android:lines="2"
+        android:maxLines="2"
+        android:textSize="20sp" />
+
+
+    <EditText
+        android:id="@+id/author"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/booktitle"
+        android:layout_marginTop="25dp"
+        android:background="#fff"
+        android:enabled="true"
+        android:gravity="bottom"
+        android:hint="@string/authored"
+        android:inputType="text"
+        android:lines="2"
+        android:maxLines="2"
+        android:singleLine="false"
+        android:textSize="20sp" />
+
+
+    <EditText
+        android:id="@+id/note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/author"
+        android:layout_marginTop="32dp"
+        android:background="#fff"
+        android:enabled="true"
+        android:gravity="bottom"
+        android:hint="@string/note"
+        android:inputType="text"
+        android:lines="2"
+        android:maxLines="2"
+        android:singleLine="false"
+        android:textSize="20sp" />
+
+
+    <RatingBar
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/saveDbButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="26dp"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:stepSize="1" />
+
+    <Button
+        android:id="@+id/saveDbButton"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:columnCount="1"
-        android:rowCount="4">
+        android:layout_marginBottom="139dp"
+        android:elevation="1dp"
+        android:text="@string/save" />
 
-        <TextView
+    <Button
+        android:id="@+id/addimagebtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/rating"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_column="0"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_row="9"
+        android:text="Add image" />
 
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Title"
-            android:textColor="@color/white" />
+    <Button
+        android:id="@+id/backbtn"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/saveDbButton"
+        android:layout_marginTop="68dp"
+        android:elevation="1dp"
+        android:text="@string/back" />
 
-        <EditText
-            android:id="@+id/booktitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#fff"
-            android:enabled="true"
-            android:gravity="bottom"
-            android:hint="@string/namebook"
-            android:inputType="text"
-            android:lines="2"
-            android:maxLines="2"
-            android:textSize="20sp" />
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/author"
-            android:textColor="@color/white" />
-
-        <EditText
-            android:id="@+id/author"
-            android:layout_width="match_parent"
-            android:layout_height="39dp"
-            android:background="#fff"
-            android:enabled="true"
-            android:gravity="bottom"
-            android:hint="@string/authored"
-            android:inputType="text"
-            android:lines="2"
-            android:maxLines="2"
-            android:singleLine="false"
-            android:textSize="20sp" />
+    <ImageView
+        android:id="@+id/book_image_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rating"
+        android:layout_alignLeft="@+id/addimagebtn"
+        android:layout_alignStart="@+id/addimagebtn"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"/>
 
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/rate"
-            android:textColor="@color/white" />
-
-        <RatingBar
-            android:id="@+id/rating"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:isIndicator="false"
-            android:numStars="5"
-            android:stepSize="1" />
-
-        <Button
-            android:id="@+id/saveDbButton"
-            style="@style/Widget.AppCompat.Button.Small"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:elevation="1dp"
-            android:text="@string/save" />
-
-        <Button
-            android:id="@+id/backbtn"
-            style="@style/Widget.AppCompat.Button.Small"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:elevation="1dp"
-            android:text="@string/back" />
-    </GridLayout>
 </RelativeLayout>

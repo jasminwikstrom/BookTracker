@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jw.booktracker.AddImageActivity">
+
+
+    <LinearLayout
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <TextView style="@style/TextAppearance.AppCompat.Small"
+            android:id="@+id/image_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <TextView style="@style/TextAppearance.AppCompat.Small"
+            android:id="@+id/image_author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <TextView style="@style/TextAppearance.AppCompat.Small"
+            android:id="@+id/image_note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <RatingBar
+            android:id="@+id/image_rating"
+            style="@style/Base.Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="true"
+            android:numStars="5" />
+
+        <EditText
+            android:id="@+id/image_add_image_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="url" />
+
+        <Button
+            android:id="@+id/image_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Back to add form" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

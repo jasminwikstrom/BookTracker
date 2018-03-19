@@ -1,19 +1,34 @@
 package com.jw.booktracker.data.model;
 
-public class Book {
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
+public class Book implements Serializable{
 
     private String id;
     private String title;
     private String author;
+    private String note;
+    private String imageUrl;
     private Integer rating;
 
     public Book() {
     }
 
-    public Book(String id, String title, String author, Integer rating) {
+    public Book(
+        String id,
+        String title,
+        String author,
+        String note,
+        String imageUrl,
+        Integer rating
+    ) {
         this.id = id;
         this.title = title;
         this.author = author;
+        this.note = note;
+        this.imageUrl = imageUrl;
         this.rating = rating;
     }
 
@@ -39,6 +54,22 @@ public class Book {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public Integer getRating() {

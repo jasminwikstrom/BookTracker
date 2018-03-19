@@ -9,4 +9,5 @@
     <string name="viewbooks">View added books</string>
     <string name="addbook">Add a book</string>
     <string name="save">Save entry</string>
+    <string name="note">Note</string>
 </resources>
