@@ -95,17 +95,24 @@ public class AddActivity extends Activity {
             title.setText(book.getTitle());
             ratingBar.setRating(book.getRating());
 
-            if (book.getImageUrl() != null) {
+            if (book.getImageUrl() != null && book.getImageUrl().length() > 0) {
                 Picasso.get().load(book.getImageUrl()).into(imageView);
-            }
+
+
         }
-    }
+    }}
 
     private void configureSaveButton() {
         Button button = findViewById(R.id.saveDbButton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+               String imageUrl = "";
+
+               if (book != null) {
+                   imageUrl = book.getImageUrl();
+               }
 
                 dbHelper.getWritableDatabase();
                 dbHelper.add(
@@ -114,7 +121,7 @@ public class AddActivity extends Activity {
                                 title.getText().toString(),
                                 author.getText().toString(),
                                 note.getText().toString(),
-                                book.getImageUrl(),
+                                imageUrl,
                                 Math.round(ratingBar.getRating())
                         )
                 );

@@ -1,8 +1,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:paddingBottom="0dp"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
     tools:context="com.jw.booktracker.MainActivity">
 
 
@@ -19,7 +20,7 @@
         android:rowCount="2">
 
 
-    <!-- ROW 1 -->
+
         <Button
             android:id="@+id/addbookbtn"
             android:layout_alignParentLeft="true"
@@ -31,7 +32,7 @@
             android:text="@string/addbook" />
 
 
-    <!-- ROW 2 -->
+
     <Button
         android:id="@+id/viewlistbtn"
         android:layout_columnWeight="1"

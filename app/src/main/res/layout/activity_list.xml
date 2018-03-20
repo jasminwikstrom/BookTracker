@@ -10,14 +10,19 @@
 
         <ListView
             android:id="@+id/list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            style="@style/Widget.AppCompat.ListView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/backbtn"
+            android:scrollbars="none|vertical" />
 
-        <Button style="@style/Widget.AppCompat.Button.Small"
+        <Button
             android:id="@+id/backbtn"
+            style="@android:style/Widget.Button.Small"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="invisible"
-            android:text="@string/back" />
+            android:layout_alignParentBottom="true"
+            android:text="@string/back"
+            android:visibility="visible" />
 
 </RelativeLayout>

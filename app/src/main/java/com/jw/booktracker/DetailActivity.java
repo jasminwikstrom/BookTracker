@@ -1,8 +1,11 @@
 package com.jw.booktracker;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -13,6 +16,9 @@ import com.squareup.picasso.Picasso;
 
 
 public class DetailActivity extends Activity {
+
+
+
 
     private DbHelper dbHelper;
 
@@ -29,6 +35,8 @@ public class DetailActivity extends Activity {
         setContentView(R.layout.activity_detail);
 
         dbHelper = new DbHelper(this.getBaseContext());
+
+        configureBackButton();
 
         title = findViewById(R.id.detail_title);
         author = findViewById(R.id.detail_author);
@@ -52,7 +60,21 @@ public class DetailActivity extends Activity {
         note.setText(byId.getNote());
         rating.setRating(byId.getRating());
 
-        Picasso.get().load(byId.getImageUrl()).into(imageView);
+        if (byId.getImageUrl() != null && byId.getImageUrl().length() > 0) {
+            Picasso.get().load(byId.getImageUrl()).into(imageView);
+        }
+    }
+
+
+    private void configureBackButton() {
+        Button detail_back = (Button) findViewById(R.id.detail_back);
+        detail_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity( new Intent(DetailActivity.this, ListActivity.class));
+
+            }
+        });
 
     }
 }

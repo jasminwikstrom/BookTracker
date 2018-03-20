@@ -6,17 +6,7 @@
     android:background="@android:color/white"
     android:paddingBottom="0dp"
     android:paddingTop="0dp"
-    tools:context="com.jw.booktracker.AddActivity"><![CDATA[
-
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_alignParentBottom="true"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentStart="true"
-    android:columnCount="4"
-    android:rowCount="9">
-
-    ]]>
+    tools:context="com.jw.booktracker.AddActivity">
 
     <EditText
         android:id="@+id/booktitle"
