@@ -11,6 +11,8 @@ import com.jw.booktracker.data.model.Book;
 import java.util.ArrayList;
 import java.util.List;
 
+/** Creates the DB creates tables*/
+
 public class DbHelper extends SQLiteOpenHelper {
 
     public static final String TABLE_NAME = "books";

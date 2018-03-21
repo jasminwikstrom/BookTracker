@@ -14,7 +14,7 @@ import com.jw.booktracker.data.model.Book;
 import com.jw.booktracker.data.persistence.DbHelper;
 import com.squareup.picasso.Picasso;
 
-
+/** View for a detailed view of certain book*/
 public class DetailActivity extends Activity {
 
 
@@ -46,7 +46,7 @@ public class DetailActivity extends Activity {
         imageView = findViewById(R.id.book_image);
 
 
-
+        /** Förklaring, other values????*/
         Bundle b = getIntent().getExtras();
         int value = -1; // or other values
         if(b != null)

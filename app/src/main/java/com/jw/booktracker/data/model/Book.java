@@ -4,6 +4,8 @@ import android.os.Parcelable;
 
 import java.io.Serializable;
 
+
+/** Class for book-object*/
 public class Book implements Serializable{
 
     private String id;

@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.jw.booktracker.data.model.Book;
 
+
+/** View for adding image to book-object*/
 public class AddImageActivity extends Activity {
 
     private TextView title;
@@ -23,6 +25,7 @@ public class AddImageActivity extends Activity {
 
     private Book book;
 
+    /** Starts logic of activity & gets the temporary book */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +37,7 @@ public class AddImageActivity extends Activity {
         populateTextViews();
     }
 
+    /** WSends the book-object back to addActivity */
     private void configLayout() {
 
         title = findViewById(R.id.image_title);

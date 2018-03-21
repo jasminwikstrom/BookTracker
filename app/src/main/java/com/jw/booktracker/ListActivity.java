@@ -15,6 +15,8 @@ import com.jw.booktracker.data.persistence.DbHelper;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/** View for all books in DB */
 public class ListActivity extends Activity {
 
     private ListView listView;
@@ -35,12 +37,14 @@ public class ListActivity extends Activity {
         populateList();
     }
 
+
+    /** populates list, getting all books from DB */
     private void populateList() {
-        List<String> items = new ArrayList<>();
+        List<String> items = new ArrayList<>(); // ta bort?
 
         List<Book> allBooks = dbHelper.getAllBooks();
 
-
+        /** BRA förklaring behövs!!!!!! */
         ArrayAdapter<Book> adapter = new ArrayAdapter<Book>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, allBooks);
 

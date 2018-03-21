@@ -22,7 +22,11 @@ import com.squareup.picasso.Picasso;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+
+/** View for adding books */
+
 public class AddActivity extends Activity {
+
 
     private DbHelper dbHelper;
 
@@ -52,10 +56,13 @@ public class AddActivity extends Activity {
         configuraAddImageButton();
     }
 
+
+    /** Creates a temporary book-object to send & modify in imageActivity */
     private void configuraAddImageButton() {
 
         addImageButton = findViewById(R.id.addimagebtn);
         addImageButton.setOnClickListener(new View.OnClickListener() {
+
 
             @Override
             public void onClick(View view) {
@@ -79,7 +86,7 @@ public class AddActivity extends Activity {
 
     }
 
-
+    /** Loads object from Imageactivity if url is inserted */
     private void configureForm() {
         title = findViewById(R.id.booktitle);
         author = findViewById(R.id.author);
@@ -102,6 +109,8 @@ public class AddActivity extends Activity {
         }
     }}
 
+
+    /** Write object to DB */
     private void configureSaveButton() {
         Button button = findViewById(R.id.saveDbButton);
         button.setOnClickListener(new View.OnClickListener() {
